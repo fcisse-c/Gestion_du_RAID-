@@ -1,4 +1,6 @@
 # Gestion du RAID sous Linux
+![image](https://github.com/user-attachments/assets/09cd970c-1901-4631-a1b8-b0fe9c173535)
+
 ### Étape 1 : Création d'un RAID 1 avec 2 disques
 1. **Partitionnement des disques**
    ```bash
