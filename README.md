@@ -6,7 +6,10 @@
    ```bash
    sudo fdisk /dev/sdb
    ```
+   ![image](https://github.com/user-attachments/assets/717a0c48-8367-4aab-9824-c68d5e197246)
+
    ![image](https://github.com/user-attachments/assets/6a14e981-0a2b-45cb-beb5-3e2e1334e7c4)
+   ![image](https://github.com/user-attachments/assets/c438bf54-0ef2-4a5f-b622-9c82951a3957)
 
 
 Crée une nouvelle partition primaire qui prend la totalité du disque et de type RAID Linux auto. Répète cette opération pour le second disque /dev/sdc.
