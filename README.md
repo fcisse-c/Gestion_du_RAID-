@@ -31,9 +31,11 @@ Montage du RAID
 sudo mkdir /home/wilder/Data-RAID1 -p
 sudo mount /dev/md0 /home/wilder/Data-RAID1/
  ```
+
 Pour que le RAID soit monté automatiquement à chaque démarrage, ajoute cette ligne à /etc/fstab :
 
 /dev/md0 /home/wilder/Data-RAID1 ext4 nofail 0 0
+
 Étape 2 : Reconstruction du RAID après une simulation de panne
 Simulation d'une panne (déconnecte un des disques)
 
