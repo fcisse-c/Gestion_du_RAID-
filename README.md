@@ -45,6 +45,8 @@ Reconstruction du RAID avec un nouveau disque Partitionne le disque sdd comme pr
 ```bash
 sudo mdadm --manage /dev/md0 --add /dev/sdd1
  ```
+![image](https://github.com/user-attachments/assets/b7b78399-41da-4798-9a4b-eac5df5cbe64)
+
 Étape 3 : Création d'un RAID 5
 Partitionnement des disques (minimum 3 disques, sdb, sdc, sdd)
 
@@ -56,10 +58,12 @@ Création du RAID 5
  ```
 ```bash
 sudo mdadm --create /dev/md0 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1 /dev/sdd1
-Formatage et montage du RAID 5
  ```
+Formatage et montage du RAID 5
 ```bash
 sudo mkfs.ext4 /dev/md0 -L "PersonalData"
+![image](https://github.com/user-attachments/assets/e0737838-9377-46e7-93c4-c8ee3ab7f257)
+
 sudo mkdir /home/wilder/Data-RAID5 -p
 sudo mount /dev/md0 /home/wilder/Data-RAID5/
  ```
