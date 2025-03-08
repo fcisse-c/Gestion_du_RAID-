@@ -28,13 +28,13 @@ sudo mkfs.ext4 /dev/md0 -L "PersonalData"
 Montage du RAID
 
 ```bash
-sudo mkdir /home/wilder/Data-RAID1 -p
-sudo mount /dev/md0 /home/wilder/Data-RAID1/
+sudo mkdir /home/fatouma/Data-RAID1 -p
+sudo mount /dev/md0 /home/fatouma/Data-RAID1/
  ```
 
 Pour que le RAID soit monté automatiquement à chaque démarrage, ajoute cette ligne à /etc/fstab :
 
-/dev/md0 /home/wilder/Data-RAID1 ext4 nofail 0 0
+/dev/md0 /home/fatouma/Data-RAID1 ext4 nofail 0 0
 
 Étape 2 : Reconstruction du RAID après une simulation de panne
 Simulation d'une panne (déconnecte un des disques)
@@ -65,14 +65,17 @@ sudo mdadm --create /dev/md0 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1 /dev
 Formatage et montage du RAID 5
 ```bash
 sudo mkfs.ext4 /dev/md0 -L "PersonalData"
-![image](https://github.com/user-attachments/assets/e0737838-9377-46e7-93c4-c8ee3ab7f257)
-
-sudo mkdir /home/wilder/Data-RAID5 -p
-sudo mount /dev/md0 /home/wilder/Data-RAID5/
  ```
+![image](https://github.com/user-attachments/assets/e0737838-9377-46e7-93c4-c8ee3ab7f257)
+```bash
+sudo mkdir /home/fatouma/Data-RAID5 -p
+sudo mount /dev/md0 /home/fatouma/Data-RAID5/
+ ```
+![image](https://github.com/user-attachments/assets/c6100685-af91-4784-8211-e44c3c7a6ad1)
+
 Ajoute également cette ligne à /etc/fstab pour le montage automatique :
 ```bash
-/dev/md0 /home/wilder/Data-RAID5 ext4 nofail 0 0
+/dev/md0 /home/fatouma/Data-RAID5 ext4 nofail 0 0
  ```
 Historique de la commande history
 Filtre les commandes inutiles et les erreurs pour ne garder que les commandes pertinentes. Par exemple :
