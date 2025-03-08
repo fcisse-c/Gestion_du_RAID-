@@ -11,7 +11,7 @@
    ![image](https://github.com/user-attachments/assets/6a14e981-0a2b-45cb-beb5-3e2e1334e7c4)
    ![image](https://github.com/user-attachments/assets/c438bf54-0ef2-4a5f-b622-9c82951a3957)
 
-
+   ![image](https://github.com/user-attachments/assets/b7b78399-41da-4798-9a4b-eac5df5cbe64)
 Crée une nouvelle partition primaire qui prend la totalité du disque et de type RAID Linux auto. Répète cette opération pour le second disque /dev/sdc.
 
 Création du RAID 1
@@ -47,7 +47,8 @@ Reconstruction du RAID avec un nouveau disque Partitionne le disque sdd comme pr
 ```bash
 sudo mdadm --manage /dev/md0 --add /dev/sdd1
  ```
-![image](https://github.com/user-attachments/assets/b7b78399-41da-4798-9a4b-eac5df5cbe64)
+
+![image](https://github.com/user-attachments/assets/fa7bcc44-92fb-4ac6-9b7b-d2eed737cb55)
 
 Étape 3 : Création d'un RAID 5
 Partitionnement des disques (minimum 3 disques, sdb, sdc, sdd)
