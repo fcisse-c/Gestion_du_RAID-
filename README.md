@@ -12,10 +12,10 @@
    ![image](https://github.com/user-attachments/assets/c438bf54-0ef2-4a5f-b622-9c82951a3957)
 
    ![image](https://github.com/user-attachments/assets/b7b78399-41da-4798-9a4b-eac5df5cbe64)
+
 Crée une nouvelle partition primaire qui prend la totalité du disque et de type RAID Linux auto. Répète cette opération pour le second disque /dev/sdc.
 
 Création du RAID 1
-
  ```bash
 sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1
  ```
@@ -38,7 +38,6 @@ Pour que le RAID soit monté automatiquement à chaque démarrage, ajoute cette 
 
 Étape 2 : Reconstruction du RAID après une simulation de panne
 Simulation d'une panne (déconnecte un des disques)
-
 ```bash
 sudo umount /dev/sdb1
  ```
@@ -48,16 +47,11 @@ Reconstruction du RAID avec un nouveau disque Partitionne le disque sdd comme pr
 sudo fdisk /dev/sdd
 sudo mdadm --manage /dev/md0 --add /dev/sdd1
  ```
-
 ![image](https://github.com/user-attachments/assets/fa7bcc44-92fb-4ac6-9b7b-d2eed737cb55)
 
 Étape 3 : Création d'un RAID 5
 Partitionnement des disques (minimum 3 disques, sdb, sdc, sdd)
-
 ```bash
-sudo fdisk /dev/sdb
-sudo fdisk /dev/sdc
-sudo fdisk /dev/sdd
 Création du RAID 5
  ```
 ```bash
@@ -82,7 +76,6 @@ Ajoute également cette ligne à /etc/fstab pour le montage automatique :
 
 Historique de la commande history
 Filtre les commandes inutiles et les erreurs pour ne garder que les commandes pertinentes. Par exemple :
-
 ```bash
 history | grep "mdadm\|fdisk\|mkfs\|mount\|umount"
  ```
