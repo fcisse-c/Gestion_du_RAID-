@@ -45,6 +45,7 @@ sudo umount /dev/sdb1
 
 Reconstruction du RAID avec un nouveau disque Partitionne le disque sdd comme précédemment et exécute :
 ```bash
+sudo fdisk /dev/sdd
 sudo mdadm --manage /dev/md0 --add /dev/sdd1
  ```
 
@@ -77,9 +78,12 @@ Ajoute également cette ligne à /etc/fstab pour le montage automatique :
 ```bash
 /dev/md0 /home/fatouma/Data-RAID5 ext4 nofail 0 0
  ```
+![image](https://github.com/user-attachments/assets/b09b2800-43a1-4a99-a37b-df995f55abb1)
+
 Historique de la commande history
 Filtre les commandes inutiles et les erreurs pour ne garder que les commandes pertinentes. Par exemple :
 
 ```bash
 history | grep "mdadm\|fdisk\|mkfs\|mount\|umount"
  ```
+![image](https://github.com/user-attachments/assets/c65de69e-87cd-47bb-9ff2-25735348ad66)
